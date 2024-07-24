@@ -24,10 +24,10 @@ class NotasController extends Controller
         if($request->isMethod('post')){//Si es pedido es post.
 
             $request->validate([ // validamos los datos ingresados de los inputs nota y los inputs seleccionados en estudiante y materias que se seleccionan como id
-                'nota' => 'required|numeric|min:0',
+                'nota' => 'required|numeric|min:0|max:10',
                 'estudiante_id' => 'required|numeric',
                 'materias_id' => 'required|numeric'
-            ]);
+            ]);// este metodo si falla automaticamente devuelve un mensaje de error
 
             if (Nota::existeNota($request->estudiante_id,$request->materias_id)) { //Si existeNota es true
                 return redirect()->back()->withErrors(['message' => 'El estudiante ya tiene una nota en esta materia.']);//Regreso a la pagina y muestro el error en la piscina de errores.
