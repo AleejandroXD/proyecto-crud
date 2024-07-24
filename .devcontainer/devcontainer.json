@@ -22,7 +22,7 @@
 	//"forwardPorts": [8080]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	//"postCreateCommand": "chmod a+x .devcontainer/setup.sh && ./.devcontainer/setup.sh",
+	"postCreateCommand": "chmod a+x .devcontainer/setup.sh && ./.devcontainer/setup.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
