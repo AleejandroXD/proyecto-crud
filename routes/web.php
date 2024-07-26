@@ -1,9 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EstudiantesController;
-use App\Http\Controllers\MateriaController;
-use App\Http\Controllers\NotasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +17,15 @@ use App\Http\Controllers\NotasController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/form', [MateriaController::class, 'showForm']);
-Route::match(['get', 'post'],'/estudiantes', [EstudiantesController::class, 'index'])->name('estudiantes.index');
-Route::match(['get', 'post'],'/notas', [NotasController::class, 'index'])->name('notas.index');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
