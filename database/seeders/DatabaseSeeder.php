@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            MateriaSeeder::class //con el nombre de la clase del seeder
+            UsersSeeder::class,
+            MateriaSeeder::class, //con el nombre de la clase del seeder
+            EstudiantesSeeder::class
         ]);
     }
 }
