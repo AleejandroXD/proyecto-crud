@@ -28,7 +28,6 @@ class Nota extends Model
      * atributo.
      * 
      */
-    {
     protected function nombreEstudiante(): Attribute
     { 
         return Attribute::make( //Cuando se ejecuta la funcion 
