@@ -52,12 +52,12 @@
                     @endforeach
                     </select>
                 <input type="number" step="0.1" min="0" max="10" name="nota" placeholder="Nota">
-                <button type="submit" class='btn btn-primary'>Cargar Nota</button>
+                <button type="submit" class="rounded-md bg-sky-600 text-white p-2">Cargar Nota</button>
             </form>
         </div>
         <hr>
         <div class="row resultados">
-            <table>
+            <table class="bg-slate-50 dark:bg-slate-700">
                 <tr class="claves">
                     <td class="clave">Estudiante</td>
                     <td class="clave">Materia</td>
@@ -73,7 +73,7 @@
             </table>
         </div>
         <div class="row">
-            <a class="btn btn-primary" href="{{url('/')}}">← Regresar</a>
+            <a class="rounded-md bg-green-600 text-white p-2" href="{{url('/')}}">← Regresar</a>
         </div>
 
     @endsection

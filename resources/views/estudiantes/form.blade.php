@@ -42,12 +42,12 @@
                 @csrf
                 <input type="text" name="nombres" placeholder='nombre estudiante'>
                 <input type="number" name="dni" placeholder='dni estudiante'>
-                <button type='submit' class='btn btn-primary'>Cargar Estudiante</button>
+                <button type='submit' class="rounded-md bg-sky-600 text-white p-2">Cargar Estudiante</button>
             </form>
         </div>
         <hr>
         <div class="row resultados">
-            <table>
+            <table class="bg-slate-50 dark:bg-slate-700">
                 <tr class="claves">
                     <td class="clave">Estudiante</td>
                     <td class="clave">DNI Estudiante</td>
@@ -61,7 +61,7 @@
             </table>
         </div>
         <div class="row">
-            <a class="btn btn-primary" href="{{url('/')}}">← Regresar</a>
+            <a class="rounded-md bg-green-600 text-white p-2" href="{{url('/')}}">← Regresar</a>
         </div>
     @endsection
 
